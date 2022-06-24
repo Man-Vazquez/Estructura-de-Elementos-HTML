@@ -7,26 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--title Aquí va el título del documento, como aparecerá en la barra del navegador y en la pestaña en la que esté abierta.-->
     <title>Diseñador Freelancer</title>
+    <!--En su forma más básica, establece lo linkque tiene rel="preload"una alta prioridad. A diferencia de la captación previa, en la que el navegador puede decidir si es una buena idea o no, la precarga obligará al navegador a hacerlo.-->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <!--normalize para normalizar los elementos y que se vean consistentes en los diferentes navegadores-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <!--body Una vez que se cierra el contenido con la etiqueta </head>, la de <body> abre el texto, como si se tratara de los límites del contenido que se muestra en la página web y que puede ver el usuario. Para poner un símil con un libro, esta etiqueta indica dónde inicia la primera línea y dónde termina la última de una página.-->
 <body>
     <header>
         <!--h1,h2..h6 Con ellas indicas los títulos y subtítulos de un texto, en diferentes tamaños, según su nivel de importancia. El <h1> es el más grande, y debería dedicarse al título del texto.-->
-        <h1>José Manuel Vázquez Carrillo</h1>
+        <h1 class="titulo">José Manuel Vázquez Carrillo <span>Freelancer</span></h1>
     </header>
 
     <!--nav representa una sección de una página cuyo propósito es proporcionar enlaces de navegación, ya sea dentro del documento actual o a otros documentos.-->
-    <nav>
-        <!--a permite añadir un vinculo-->
-        <a href="#">Inicio</a>
-        <a href="#">Sobre Mi</a>
-        <a href="#">Clientes</a>
-        <a href="#">Contacto</a>
-    </nav>
+    <div class="nav-bg">
+        <nav class="navegacion-principal contenedor">
+            <!--a permite añadir un vinculo-->
+            <a href="#">Inicio</a>
+            <a href="#">Sobre Mi</a>
+            <a href="#">Clientes</a>
+            <a href="#">Contacto</a>
+        </nav>
+    </div>
 
     <!--section representa una sección genérica de un documento.-->
     <section>
-        <h2>Diseño y Desarrollo Web Freelancer</h2> 
+        <h2 class="titulo">Diseño y Desarrollo Web <span>Freelancer</span></h2> 
         <!--icono de https://tablericons.com/-->
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="88" height="88" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFC107" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
