@@ -6,42 +6,106 @@
     --primario: #FFC107;
     --secundario: #0097A7;
     --gris: #757575;
+    --grisClaro: #DFE9F3;
 }
 
+/* Globales */
 /*Convertimos los REM a PX*/
 html {
     font-size: 62.5%;
+    /*Para que no afecte el tamaño de un contenedor por el padding*/
+    box-sizing: border-box;
+}
+
+/*Para que no afecte el tamaño de un contenedor por el padding*/
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
     font-size: 16px; /* 1 rem = 10px */
     font-family: 'Krub', sans-serif;
+    /* Se puede degradar en css con linear-gradient -> como primer parametro le pasamos desde donde va ir el degradado por ejemplo top significa que ira hacia arriba, bottom hacia abajo etc, luego cual seria el primer color  el 0% significa que en el fiondo empezara el color luego hacia que color terminara y 100 significa arriba*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
 }
 
-.titulo {
+.contenedor {
+    /*aqui cambiamos el width para no forzarlo a que tome los 120 rem si no quemaximo tome los 120, si no que tome todo el ancho */
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.boton {
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        width: auto;
+    }
+}
+
+.sombra {
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* Tipografia */
+h1 {
     font-size: 3.8rem;
 }
 
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h1,h2,h3 {
+    text-align: center;
+}
+
+/* Titulos */
 .titulo span {
     font-size: 2rem;
 }
 
-.contenedor {
-    width: 120rem;
-    margin: 0 auto;
-}
-
+/* Navegacion principal */
 .nav-bg {
     background-color: var(--secundario);
 }
 
 .navegacion-principal {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .navegacion-principal a {
+    display: block;
+    text-align: center;
     color: var(--blanco);
     text-decoration: none;
     font-size: 2rem;
@@ -52,4 +116,82 @@ body {
 .navegacion-principal a:hover {
     background-color: var(--primario);
     color: var(--oscuro);
+}
+
+/* Hero */
+.hero {
+    /*Ubicacion de la imagen*/
+    background-image: url(../img/hero.jpg);
+    /*Para que la imagen no se repita segun el tamaño*/
+    background-repeat: no-repeat;
+    /*Para que tome todo el ancho la imagen*/
+    background-size: cover;
+    height: 450px;
+    /*Para posicionar absolutamente un objeto hay que aplicarle una relacion relativa al padre*/
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero {
+    position: absolute;
+    /*background-color: rgba(0, 0, 0, .7); Sintaxis anterior*/
+    background-color: rgb(0 0 0 / 70%);
+    width: 100%;
+    height: 100%;
+
+    /*Este codigo servira para alinear y centrar*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+.contenido-hero .ubicacion {
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Servicios */
+
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        /* para dividir las columnas con grid */
+        /*grid-template-columns: 33.3% 33.3% 33.3%;*/
+        /*grid-template-columns: 1fr 1fr 1fr;*/
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+}
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p {
+    /*Para el interlineado entre parrafos*/
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
