@@ -104,47 +104,49 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores iure alias pariatur fuga, minima dolorum quidem porro consequatur accusamus officia? Quod cupiditate delectus aut labore provident iure doloribus ipsa adipisci!</p>
             </section>
         </div><!-- .servicios -->
-    </main>
-
-    <section>
-        <h2>Contacto</h2>
-        <!--form Indica que dentro vamos a incluir un formulario.-->
-        <form action="">
-            <!--fieldset Para englobar distintos campos relacionados dentro de un formulario. Por ejemplo, datos personales, aficiones, etc.-->
-            <fieldset>
-                <legend>Contactanos llenando todos los cambios</legend>
-                <!--div es un contenedor genérico de bloque para otros elementos. Es «genérico» porque no describe el contenido que contiene.-->
-                <div>
-                    <!--label Para crear el título del campo del formulario-->
-                    <label for="">Nombre</label>
-                    <!--input Un campo de nuestro formulario. Pueden ser de texto, selección, numeros, botones, fechas, etc.-->
-                    <input type="text" placeholder="Tu nombre">
-                </div>
-
-                <div>
-                    <label for="">Télefono</label>
-                    <input type="tel" placeholder="Tu telefono">
-                </div>
-
-                <div>
-                    <label for="">Correo</label>
-                    <input type="email" placeholder="Tu email">
-                </div>
-                
-                <div>
-                    <label for="">Mensaje</label>
-                    <!--textarea Un campo de texto para poder escribir varias líneas-->
-                    <textarea></textarea>
-                </div>
-
-                <div>
-                    <input type="submit" value="Enviar">
-                </div>
-            </fieldset>
-        </form>
-    </section>
     
-    <footer>
+
+        <section>
+            <h2>Contacto</h2>
+            <!--form Indica que dentro vamos a incluir un formulario.-->
+            <form class="formulario" action="">
+                <!--fieldset Para englobar distintos campos relacionados dentro de un formulario. Por ejemplo, datos personales, aficiones, etc.-->
+                <fieldset>
+                    <legend>Contactanos llenando todos los cambios</legend>
+                    <div class="contenedor-campos">
+                        <!--div es un contenedor genérico de bloque para otros elementos. Es «genérico» porque no describe el contenido que contiene.-->
+                        <div class="campo">
+                            <!--label Para crear el título del campo del formulario-->
+                            <label for="">Nombre</label>
+                            <!--input Un campo de nuestro formulario. Pueden ser de texto, selección, numeros, botones, fechas, etc.-->
+                            <input type="text" placeholder="Tu nombre" class="input-text">
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Télefono</label>
+                            <input type="tel" placeholder="Tu telefono" class="input-text">
+                        </div>
+
+                        <div class="campo">
+                            <label for="">Correo</label>
+                            <input type="email" placeholder="Tu email" class="input-text">
+                        </div>
+                        
+                        <div class="campo">
+                            <label for="">Mensaje</label>
+                            <!--textarea Un campo de texto para poder escribir varias líneas-->
+                            <textarea class="input-text"></textarea>
+                        </div>
+                    </div>  <!-- .contenedor-campos -->  
+                    <div class="alinear-derecha flex">
+                        <input class="boton w-sm-100" type="submit" value="Enviar">
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    
+    <footer class="footer">
         <p>Todos los derechos reservados. José Manuel Vázquez Carrillo Freelancer</p>
     </footer>
 
